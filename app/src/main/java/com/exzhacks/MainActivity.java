@@ -12,7 +12,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.exzhacks.ui.login.LoginFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,10 +28,9 @@ import com.google.firebase.storage.FirebaseStorage;
 
 public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
-    private RequestQueue requestQueue;
-public static FragmentManager fragmentManager;
-//variable for fbfs
-private FirebaseFirestore db;
+    public static RequestQueue requestQueue;
+    //variable for fbfs
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,9 +68,10 @@ private FirebaseFirestore db;
         } catch (AmplifyException e) {
             Log.e("AWS_Auth",e.toString());
         }
-
-    //Storing a user to Firestore
-    //private void addDataToFirestore user topic = (user) {
+*/
+        //Storing a user to Firestore
+        //private void addDataToFirestore user topic = (user) {
+    }
     private void addDataToFirestore(User user){
 
         //creating collection reference
@@ -81,7 +80,6 @@ private FirebaseFirestore db;
 
         dbTopic.add(user);
     }
-
     private void jsonParse() {
         String url = "https://mavorgs.campuslabs.com/engage/api/discovery/search/organizations?orderBy[0]=UpperName%20asc&top=1000&filter=&query=&skip=0";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
