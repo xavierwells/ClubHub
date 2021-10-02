@@ -9,12 +9,16 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.exzhacks.R;
+import com.exzhacks.ui.login.LoginFragment;
+
+import static com.exzhacks.MainActivity.fragmentManager;
 
 public class ActionFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_actions, container, false);
+
         return root;
     }
 

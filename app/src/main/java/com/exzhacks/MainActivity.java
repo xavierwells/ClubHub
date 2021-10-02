@@ -1,7 +1,12 @@
 package com.exzhacks;
 
 import android.os.Bundle;
-
+import android.util.Log;
+4
+import com.amplifyframework.AmplifyException;
+import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
+import com.amplifyframework.core.Amplify;
+import com.exzhacks.ui.login.LoginFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +14,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
 
