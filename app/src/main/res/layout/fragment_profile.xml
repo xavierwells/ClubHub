@@ -21,9 +21,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="monospace"
-                android:text="Full Name"
+                android:layout_marginLeft="135dp"
+                android:layout_marginTop="18dp"
+                android:fontFamily="sans-serif-light"
+                android:text="John Apple"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -31,9 +32,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="monospace"
-                android:text="Title/School"
+                android:layout_marginLeft="75dp"
+                android:fontFamily="sans-serif-light"
+                android:text="University of Texas at Arlington"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="italic" />
@@ -41,9 +42,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="monospace"
-                android:text="Location"
+                android:layout_marginLeft="170dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Keller"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="normal" />
@@ -57,7 +58,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="19dp"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
@@ -118,7 +119,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:text="Groups"
+                            android:text="Classes"
                             android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
@@ -159,7 +160,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:text="Groups"
+                            android:text="Blog"
                             android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
@@ -200,7 +201,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:text="Groups"
+                            android:text="Friends"
                             android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />

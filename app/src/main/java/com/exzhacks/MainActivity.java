@@ -12,6 +12,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.exzhacks.ui.login.LoginFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,14 +22,31 @@ import androidx.navigation.ui.NavigationUI;
 
 import androidx.fragment.app.FragmentManager;
 
+
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+
 public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     private RequestQueue requestQueue;
+public static FragmentManager fragmentManager;
+//variable for fbfs
+private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        // This fragment manager is really handy to have around if we need to do any weird transitions
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+
         fragmentManager = getSupportFragmentManager();
+        User dummy = new User();
+        dummy.setEmail("email@email.com");
+        dummy.setFirstName("gfgd");
+        dummy.setMajor("compy");
+        dummy.setUserName("xavier");
+        addDataToFirestore(dummy);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -53,20 +71,15 @@ public class MainActivity extends AppCompatActivity {
             Log.e("AWS_Auth",e.toString());
         }
 
-        // This try catch initializes the AWS stuff we need
-        try {
-            Amplify.configure(getApplicationContext());
-            Log.i("AWS_Amplify", "Initialized Amplify");
-        } catch (AmplifyException error) {
-            Log.e("AWS_Amplify", "Could not initialize Amplify", error);
-        }
+    //Storing a user to Firestore
+    //private void addDataToFirestore user topic = (user) {
+    private void addDataToFirestore(User user){
 
+        //creating collection reference
+        CollectionReference dbTopic = db.collection("Topic");
+        //User u = new User(user);
 
-        Amplify.Auth.fetchAuthSession(
-                result -> Log.i("AmplifyQuickstart", result.toString()),
-                error -> Log.e("AmplifyQuickstart", error.toString())
-        );
- */
+        dbTopic.add(user);
     }
 
     private void jsonParse() {
