@@ -21,10 +21,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="135dp"
+                android:layout_marginLeft="120dp"
                 android:layout_marginTop="18dp"
                 android:fontFamily="sans-serif-light"
-                android:text="John Apple"
+                android:text="Alexander Smith"
                 android:textColor="@color/black"
                 android:textSize="25dp"
                 android:textStyle="bold" />
@@ -42,9 +42,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="170dp"
+                android:layout_marginLeft="180dp"
                 android:fontFamily="sans-serif-medium"
-                android:text="Keller"
+                android:text="Irving"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="normal" />
@@ -58,7 +58,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="19dp"
+                android:layout_marginTop="12dp"
                 android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
@@ -78,7 +78,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:text="Groups"
+                            android:text="My Groups"
                             android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
@@ -119,7 +119,48 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:text="Classes"
+                            android:text="My Classes"
+                            android:textColor="@color/white"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+
+                        <ImageView
+                            android:layout_width="150dp"
+                            android:layout_height="100dp"
+                            android:layout_alignParentRight="true"
+                            android:maxHeight="100dp"
+                            android:src="@drawable/ic_dashboard_black_24dp"></ImageView>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/lizpurp"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Calendar"
                             android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
@@ -170,6 +211,7 @@
                             android:layout_width="150dp"
                             android:layout_height="100dp"
                             android:layout_alignParentRight="true"
+                            android:layout_marginRight="7dp"
                             android:maxHeight="100dp"
                             android:src="@drawable/ic_dashboard_black_24dp"></ImageView>
 
@@ -201,7 +243,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:text="Friends"
+                            android:text="My Friends"
                             android:textColor="@color/white"
                             android:textSize="30sp"
                             android:textStyle="bold" />
