@@ -9,14 +9,25 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/org_search"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/lizpurp"
-        android:textCursorDrawable="@null"
-        app:iconifiedByDefault="false"
-        app:queryBackground="@null" />
+        android:orientation="horizontal">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/org_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lizpurp"
+            android:textCursorDrawable="@null"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null" />
+
+        <CheckBox
+            android:id="@+id/chkb"
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:background="@color/lizpurp"/>
+    </LinearLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView

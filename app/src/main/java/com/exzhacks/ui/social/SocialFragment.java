@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
@@ -17,6 +19,7 @@ import com.exzhacks.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.exzhacks.MainActivity.curUser;
 import static com.exzhacks.MainActivity.mOrganizations;
 
 public class SocialFragment extends Fragment implements RVAdapter.OnItemClicked, View.OnClickListener{
@@ -24,11 +27,40 @@ public class SocialFragment extends Fragment implements RVAdapter.OnItemClicked,
     SearchView searchView;
     ArrayList<Organization> dataset;
     RVAdapter mAdapter;
+    CheckBox chk;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_social, container, false);
 
+        chk = root.findViewById(R.id.chkb);
+
+        chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView,boolean isChecked) {
+                if(isChecked){
+                        ArrayList<Organization> temp = new ArrayList();
+                        for(Organization note: dataset){
+                            //or use .equal(text) with you want equal match
+                            //use .toLowerCase() for better matches
+                            String filterText;
+                            for( int i=0;i<curUser.getInterests().size();i++) {
+                                filterText = curUser.getInterests().get(i);
+                                if ((note.getName().toLowerCase().contains(filterText.toLowerCase())) || (note.getSummary().toLowerCase().contains(filterText.toLowerCase()))) {
+                                    if(!(temp.contains(note)))
+                                        temp.add(note);
+                                }
+                            }
+                        }
+                        //update recyclerview
+                        mAdapter.updateList(temp);
+                }
+                if(!isChecked){
+                    mAdapter.updateList(dataset);
+                }
+            }
+        }
+        );
 
         RecyclerView mRecyclerView = (RecyclerView) root.findViewById(R.id.org_rv);
 
@@ -70,7 +102,7 @@ public class SocialFragment extends Fragment implements RVAdapter.OnItemClicked,
 
     void filter(String text){
         ArrayList<Organization> temp = new ArrayList();
-        for(Organization note: dataset){
+        for(Organization note: mAdapter.getCurDataset()){
             //or use .equal(text) with you want equal match
             //use .toLowerCase() for better matches
             if((note.getName().toLowerCase().contains(text.toLowerCase())) || (note.getSummary().toLowerCase().contains(text.toLowerCase()))){
