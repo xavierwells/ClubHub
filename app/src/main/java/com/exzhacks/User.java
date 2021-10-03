@@ -9,12 +9,21 @@ public class User
     private String lastName;
     private String email;
     private String major;
+    private String password;
 
     private ArrayList<String> interests;
 
     public User()
     {
         this.interests = new ArrayList<String>();
+    }
+
+    public void setPassword( String password){
+        this.password = password;
+    }
+
+    public String getPassword(){
+        return password;
     }
 
     public String getUserName()

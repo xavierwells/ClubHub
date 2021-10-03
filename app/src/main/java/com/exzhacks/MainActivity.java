@@ -26,14 +26,30 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static RequestQueue requestQueue;
     //variable for fbfs
     public FirebaseFirestore db;
+    public static ArrayList<Organization> mOrganizations;
+    public static User curUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        mOrganizations = new ArrayList<Organization>();
+
+        curUser = new User();
+        curUser.setEmail("xavierwells03@hotmail.com");
+        curUser.setUserName("myUsername");
+        curUser.setPassword("myPassword");
+        curUser.setFirstName("Xavier");
+        curUser.setLastName("Wells");
+        curUser.addInterest("Computer");
+        curUser.addInterest("technology");
+        curUser.addInterest("math");
         db = FirebaseFirestore.getInstance();
         FirebaseStorage storage = FirebaseStorage.getInstance();
 
@@ -46,14 +62,15 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(navView, navController);
 
-
+        //This is a good example of how to add a user to the DB
+        /*
         User dummy = new User();
         dummy.setEmail("email@email.com");
         dummy.setFirstName("gfgd");
         dummy.setMajor("compy");
         dummy.setUserName("xavier");
         addDataToFirestore(dummy);
-
+        */
         requestQueue = Volley.newRequestQueue(this);
         jsonParse();
 
@@ -75,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         //Storing a user to Firestore
         //private void addDataToFirestore user topic = (user) {
     }
-    private void addDataToFirestore(User user){
+    public void addDataToFirestore(User user){
 
         //creating collection reference
         CollectionReference dbTopic = db.collection("Topic");
@@ -92,10 +109,11 @@ public class MainActivity extends AppCompatActivity {
                     JSONArray jsonArray = response.getJSONArray("value");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject employee = jsonArray.getJSONObject(i);
-                        String id = employee.getString("Id");
-                        String name = employee.getString("Name");
-                        String sum = employee.getString("Summary");
-                        Log.v("JSON", id + " " + name + " " + sum + "\n");
+                        Organization temp = new Organization();
+                        temp.setId(employee.getInt("Id"));
+                        temp.setName(employee.getString("Name"));
+                        temp.setSummary(employee.getString("Summary"));
+                        mOrganizations.add(temp);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

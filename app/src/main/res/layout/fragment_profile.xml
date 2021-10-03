@@ -19,6 +19,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="135dp"
@@ -30,6 +31,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tv_uniname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="75dp"
@@ -40,6 +42,7 @@
                 android:textStyle="italic" />
 
             <TextView
+                android:id="@+id/tv_loc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="170dp"
