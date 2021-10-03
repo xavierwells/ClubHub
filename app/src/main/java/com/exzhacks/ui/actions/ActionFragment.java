@@ -9,9 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.exzhacks.R;
-import com.exzhacks.ui.login.LoginFragment;
-
-import static com.exzhacks.MainActivity.fragmentManager;
 
 public class ActionFragment extends Fragment {
 
