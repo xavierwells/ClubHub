@@ -2,28 +2,360 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/country_content_id"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    android:layout_marginBottom="65dp"
+    tools:context=".ui.profile.ProfileFragment">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/country_search"
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/lizpurp"
-        android:textCursorDrawable="@null"
-        app:iconifiedByDefault="false"
-        app:queryBackground="@null" />
+        android:background="@color/white"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:text="Messages"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="25dp"/>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/country_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:textCursorDrawable="@null"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/albaster"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="81dp"
+                            android:layout_height="74dp"
+                            tools:layout_editor_absoluteX="12dp"
+                            tools:layout_editor_absoluteY="23dp"
+                            tools:src="@tools:sample/avatars"
+                            android:layout_marginTop="15dp"/>
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="89dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Amy Davis"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="89dp"
+                            android:layout_marginTop="70dp"
+                            android:text="Hey, what's up?"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="7:58PM"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginLeft="340dp"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="14dp"
+                            tools:layout_editor_absoluteX="351dp"
+                            tools:layout_editor_absoluteY="23dp" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="60dp"
+                            android:text=">>"
+                            android:textColor="@color/blue"
+                            android:textSize="30dp"
+                            tools:layout_editor_absoluteX="363dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/albaster"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="81dp"
+                            android:layout_height="74dp"
+                            tools:layout_editor_absoluteX="12dp"
+                            tools:layout_editor_absoluteY="23dp"
+                            tools:src="@tools:sample/avatars"
+                            android:layout_marginTop="15dp"/>
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="89dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Chandler Bing"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="89dp"
+                            android:layout_marginTop="70dp"
+                            android:text="See you at the meeting."
+                            android:textColor="@color/lizpurp"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="12dp"
+                            android:text="6:40PM"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="14dp"
+                            tools:layout_editor_absoluteX="351dp"
+                            tools:layout_editor_absoluteY="23dp" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="60dp"
+                            android:text=">>"
+                            android:textColor="@color/black"
+                            android:textSize="30dp"
+                            tools:layout_editor_absoluteX="363dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/country_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/white" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/albaster"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="81dp"
+                            android:layout_height="74dp"
+                            tools:layout_editor_absoluteX="12dp"
+                            tools:layout_editor_absoluteY="23dp"
+                            tools:src="@tools:sample/avatars"
+                            android:layout_marginTop="15dp"/>
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="89dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Joey Tribbiani"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="89dp"
+                            android:layout_marginTop="70dp"
+                            android:text="How you doin?"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="12dp"
+                            android:text="5:20PM"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="14dp"
+                            tools:layout_editor_absoluteX="351dp"
+                            tools:layout_editor_absoluteY="23dp" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="60dp"
+                            android:text=">>"
+                            android:textColor="@color/blue"
+                            android:textSize="30dp"
+                            tools:layout_editor_absoluteX="363dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/albaster"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="81dp"
+                            android:layout_height="74dp"
+                            tools:layout_editor_absoluteX="12dp"
+                            tools:layout_editor_absoluteY="23dp"
+                            tools:src="@tools:sample/avatars"
+                            android:layout_marginTop="15dp"/>
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="89dp"
+                            android:layout_marginTop="10dp"
+                            android:text="Richard Benson"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="89dp"
+                            android:layout_marginTop="70dp"
+                            android:text="Sent an image"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="18dp" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="12dp"
+                            android:text="3:11PM"
+                            android:textColor="@color/lizpurp"
+                            android:textSize="14dp"
+                            tools:layout_editor_absoluteX="351dp"
+                            tools:layout_editor_absoluteY="23dp" />
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="340dp"
+                            android:layout_marginTop="60dp"
+                            android:text=">>"
+                            android:textColor="@color/blue"
+                            android:textSize="30dp"
+                            tools:layout_editor_absoluteX="363dp"
+                            tools:layout_editor_absoluteY="59dp" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>
-
