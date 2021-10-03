@@ -30,14 +30,23 @@ public class MainActivity extends AppCompatActivity {
     public static FragmentManager fragmentManager;
     public static RequestQueue requestQueue;
     //variable for fbfs
-    private FirebaseFirestore db;
+    public FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();
         FirebaseStorage storage = FirebaseStorage.getInstance();
 
         fragmentManager = getSupportFragmentManager();
+
+        // Here, we set up the nav controller WITHOUT binders, its an old model, but it checks out
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        BottomNavigationView navView = findViewById(R.id.nav_view);
+        NavController navController = Navigation.findNavController(MainActivity.this, R.id.nav_host_fragment_activity_main);
+        NavigationUI.setupWithNavController(navView, navController);
+
+
         User dummy = new User();
         dummy.setEmail("email@email.com");
         dummy.setFirstName("gfgd");
@@ -45,16 +54,10 @@ public class MainActivity extends AppCompatActivity {
         dummy.setUserName("xavier");
         addDataToFirestore(dummy);
 
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         requestQueue = Volley.newRequestQueue(this);
         jsonParse();
 
-        // Here, we set up the nav controller WITHOUT binders, its an old model, but it checks out
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
-        NavigationUI.setupWithNavController(navView, navController);
+
 
 
 // old AWS cognito stuff, don't open unless you wanna be mad
