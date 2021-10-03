@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.SearchView
-        android:id="@+id/country_search"
+        android:id="@+id/org_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/lizpurp"
@@ -20,7 +20,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/country_rv"
+        android:id="@+id/org_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffff" />
