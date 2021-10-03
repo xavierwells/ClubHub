@@ -45,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
         curUser.setEmail("xavierwells03@hotmail.com");
         curUser.setUserName("myUsername");
         curUser.setPassword("myPassword");
-        curUser.setFirstName("Xavier");
-        curUser.setLastName("Wells");
+        curUser.setFirstName("dummy");
+        curUser.setLastName("name");
         curUser.addInterest("Computer");
         curUser.addInterest("technology");
         curUser.addInterest("math");
